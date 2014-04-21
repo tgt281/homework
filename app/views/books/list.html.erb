@@ -1,1 +1,20 @@
-<h1>Books</h1>
+<h1><font face= "helvetica">Books</font></h1>
+
+<ul>
+<% all_books = Book.read %>
+<table border= "1" style= "border:1px solid #cccccc; width: 50%; border-collapse:collapse; font-family: helvetica; font-size: 15px; text-align:left" cellpadding= "10" >
+
+<thead style= "border-bottom: 2px solid #cccccc"><tr><th>Title</th><th>Author</th></tr></thead>
+
+<% all_books.each do |book| %>
+
+
+<tr><td><%= book["title"] %></td>
+<td><%= book["author"] %></td>
+</tr>
+
+<% end %>
+
+</table>
+
+</ul>
