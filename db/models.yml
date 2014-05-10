@@ -1,6 +1,12 @@
 Book:
   - title: string
   - author: string
+  - price: integer
+
+Review:
+  - book_title: string
+  - star_rating: integer
+  - review: text
 
 
 
