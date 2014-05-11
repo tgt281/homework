@@ -11,7 +11,7 @@
   <li>Price: <%= number_to_currency(the_book["price"]) %></li>
 
   <% if review.present? %>
-    <li>Average star rating: <%= review.average("star_rating") %></li>
+    <li>Average star rating: <%= review.average("star_rating").round(2) %></li>
 </ul>
 
 <h4>Reviews</h4>
