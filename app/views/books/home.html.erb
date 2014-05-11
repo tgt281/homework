@@ -1,0 +1,9 @@
+<h1>Editor's Pick</h1>
+
+<p>
+  <% average = Review.group("book_title").order("avg(star_rating) desc") %>
+  <% book = Book.find_by("title" => average.first["book_title"]) %>
+
+    <%= link_to average.first["book_title"], "/books/#{book["id"]}" %>
+
+</p>

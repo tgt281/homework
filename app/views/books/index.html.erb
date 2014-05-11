@@ -1,0 +1,33 @@
+<h1>Book Database</h1>
+
+<% all_books = Book.read%>
+
+<hr>
+
+<ul>
+
+  <% all_books.each do |book| %>
+
+    <% review = Review.where("book_title" => book["title"]) %>
+
+    <li>
+
+      <strong><%= link_to book["title"], "/books/#{book["id"]}" %></strong>
+
+      <% if review.present? %>
+        (Average Star rating: <%= review.average("star_rating").round(2) %>)
+      <% end %>
+
+    </li>
+
+  <% end %>
+
+</ul>
+
+
+
+
+
+
+
+
